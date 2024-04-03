@@ -1,0 +1,16 @@
+{
+    "resources": {
+      "./main.js": {
+        "integrity": true,
+        "dependencies": {
+          "node:child_process": true,
+          "./poc.js": true
+        }
+      }
+    },
+    "scopes": {
+        "./":{
+            "integrity": true
+        }
+    }
+  } 
