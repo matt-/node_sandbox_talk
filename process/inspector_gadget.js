@@ -17,7 +17,7 @@ session.connect();
 	// find the line number where WorkerImpl is called. 
 	const lineNumber = scriptSource.substring(0, scriptSource.indexOf("new WorkerImpl")).split('\n').length;
 
-	// WorkerImpl will bypass permission for internal modules. We can inject the local var "isInternal = true" with a conditional breakpoint.
+	// We can inject the local var "isInternal = true" with a conditional breakpoint.
 	await session.post("Debugger.setBreakpointByUrl", {
 		lineNumber: lineNumber,
 		url: "node:internal/worker",
@@ -38,5 +38,4 @@ session.connect();
 			"--no-warnings"
 		]
 	});
-
 })()

